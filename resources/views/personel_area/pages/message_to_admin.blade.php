@@ -43,7 +43,7 @@
               </h3> -->
               <!-- tools box -->
               <div class="card-tools">
-                <button type="button" class="btn btn-tool btn-sm"
+                <!-- <button type="button" class="btn btn-tool btn-sm"
                         data-widget="collapse"
                         data-toggle="tooltip"
                         title="Collapse">
@@ -55,33 +55,11 @@
                         title="Remove">
                   <i class="fa fa-times"></i>
                 </button>
-              </div>
+              </div> -->
               <!-- /. tools -->
             </div>
-            <!-- /.card-header -->
-            <form action="/message/save message" method="POST">
-              @csrf
-              <div class="card-body">
-              <div class="mb-3">
-              <select name="personel" class="form-select" aria-label=".form-select-lg example">
-                <option value="" selected>برای انتخاب فرد اینجا را کلیک کنید</option>
-                <?php foreach($all_personel as $personel) { ?>
-                  <?php if ($personel->id == request()->session()->get("personel_access")) { 
-                      continue;  
-                  } ?>
-                    <option value="<?php echo $personel->id ?>"><?php echo $personel->name ?></option>
-                <?php } ?>
-              </select>
-
-
-              </div>
-              <!-- <p class="text-sm mb-0">مشاهده مستندات مربوط به این ویرایشگر متن <a href="https://ckeditor.com/ckeditor-5-builds/#classic">CKEditor</a> -->
-              </p>
-            </div>
-          </div>
           <!-- /.card -->
 
-          <div class="card card-outline card-info">
             <div class="card-header">
               <h3 class="card-title">
                 <small>ساده و سریع</small>
@@ -107,7 +85,6 @@
                 مشاهده <a href="https://github.com/bootstrap-wysiwyg/bootstrap3-wysiwyg">مستندات و توضیحات این ویرایشگر</a>
               </p> -->
             </div>
-
             <button class="btn" name="submit" style="font-size:18px;">ارسال پیام</button>
           </form>
           </div>

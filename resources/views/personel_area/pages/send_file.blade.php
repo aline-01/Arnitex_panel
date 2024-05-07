@@ -2,6 +2,31 @@
   <!-- Main Sidebar Container -->
   <?php include("includes/layouts/contanier.blade.php"); ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <?php  if (!empty(session("error_upload_file"))) {
+    ?>
+      <script>
+      Swal.fire({
+        icon: "error",
+        // title: "خطا",
+        text: "<?php echo session("error_upload_file"); ?>",
+      // footer: '<a href="#">Why do I have this issue?</a>'
+      }); 
+      </script>
+    
+  <?php } ?>
+  <?php  if (!empty(session("file_uploaded_msg"))) {
+    ?>
+      <script>
+      Swal.fire({
+        icon: "success",
+        // title: "خطا",
+        text: "<?php echo session("file_uploaded_msg"); ?>",
+      // footer: '<a href="#">Why do I have this issue?</a>'
+      }); 
+      </script>
+    
+  <?php } ?>
+
 <?php if ($errors->any()) { ?>
 <script>
   Swal.fire({
@@ -59,7 +84,7 @@
               <!-- /. tools -->
             </div>
             <!-- /.card-header -->
-            <form action="/message/save message" method="POST">
+            <form action="/file/send file" enctype="multipart/form-data"  method="POST">
               @csrf
               <div class="card-body">
               <div class="mb-3">
@@ -87,28 +112,21 @@
                 <small>ساده و سریع</small>
                 <!-- tools box -->
               </h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool btn-sm" data-widget="collapse" data-toggle="tooltip"
-                        title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-tool btn-sm" data-widget="remove" data-toggle="tooltip"
-                        title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
               <!-- /. tools -->
             </div>
             <!-- /.card-header -->
             <div class="card-body pad">
-              <div class="mb-3">
-                <textarea name="text" class="textarea" placeholder="لطفا متن خود را وارد کنید"
-                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </div>
-              <!-- <p class="text-sm mb-0">
+            <input type="file" name="personel_file" class="form-control" id="customFile"> 
+            <!-- <button class="btn btn-primary" 
+                type="button" data-bs-toggle="modal"
+                data-bs-target="#uploadModal">Upload</button>
+                 -->
+                  <!-- <p class="text-sm mb-0">
                 مشاهده <a href="https://github.com/bootstrap-wysiwyg/bootstrap3-wysiwyg">مستندات و توضیحات این ویرایشگر</a>
               </p> -->
             </div>
 
-            <button class="btn" name="submit" style="font-size:18px;">ارسال پیام</button>
+            <button class="btn" name="submit" style="font-size:18px;">ارسال فایل</button>
           </form>
           </div>
         </div>

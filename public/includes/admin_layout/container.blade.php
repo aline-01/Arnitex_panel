@@ -15,8 +15,8 @@
             <img src="https://www.gravatar.com/avatar/52f0fbcbedee04a121cba8dad1174462?s=200&d=mm&r=g" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-          <?php $this_personel = DB::table("personel")->where("id",request()->session()->get("personel_access"))->get(); ?>
-            <a href="#" class="d-block"><?php echo $this_personel[0]->name; ?></a>
+          <?php //$this_personel = DB::table("personel")->where("id",request()->session()->get("personel_access"))->get(); ?>
+            <a href="#" class="d-block"><?php //echo $this_personel[0]->name; ?></a>
           </div>
         </div>
 
@@ -29,33 +29,24 @@
               <a href="#" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
-                فایل ها 
-                  <i class="right fa fa-angle-left"></i>
+                پرسنل   
+                <i class="right fa fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/file/all files list" class="nav-link active">
+              <li class="nav-item">
+                  <a href="/admin area/personel/personel list" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>فایل ها دریافتی </p>
+                    <p>لیست پرسنلی</p>
                   </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/file/send file" class="nav-link">
+              </li>
+            <li class="nav-item">
+                  <a href="/admin area/personel/add personel" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>ارسال فایل </p>
+                    <p>اضافه کردن پرسنل</p>
                   </a>
-                </li>
-                <!-- <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>داشبورد سوم</p>
-                  </a>
-                </li> -->
-              </ul>
             </li>
             <li class="nav-item has-treeview">
-              <a href="" class="nav-link active">
+              <a href="#" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
                 ارسال پیام
@@ -63,34 +54,47 @@
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="./index.html" class="nav-link">
+                 <li class="nav-item">
+                  <a href="/admin area/message/public message" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>ارسال به مدیریت</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="/message/send personel message" class="nav-link">
-                    <i class="fa fa-circle-o nav-icon"></i>
-                    <p>ارسال به دیگر پرسنل</p>
+                    <p>پیام همگانی</p>
                   </a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="/message/all message" class="nav-link">
+                  <a href="/admin area/message/recent message" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>پیام های اخیر</p>
                   </a>
                 </li>
-                <!-- <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+            </li>
+            </ul>  
+            
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                فایل ها
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                  <a href="/admin area/file/send" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>داشبورد سوم</p>
+                    <p>ارسال فایل ها</p>
                   </a>
                 </li>
-              </ul> -->
+
+                <li class="nav-item">
+                  <a href="/admin area/message/recent message" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>لیست تمامی فایل ها</p>
+                  </a>
+                </li>
             </li>
-            <!-- <li class="nav-item">
+            </ul>        
+           <!-- <li class="nav-item">
               <a href="pages/widgets.html" class="nav-link">
                 <i class="nav-icon fa fa-th"></i>
                 <p>

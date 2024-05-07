@@ -11,17 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create("replay_message", function (Blueprint $table) {
+        Schema::create("files", function (Blueprint $table) {
             $table->id();
-            $table->string("content");
-            $table->integer("personel_id");
-            $table->integer("personel_target");
-            $table->integer("message_id");
-            $table->string("send_data");
+            $table->string("name");
+            $table->string("path");
+            $table->integer("personel_id");//who was send the file
+            $table->integer("personel_target");//who was must receive the file
             $table->foreign("personel_id")->references("id")->on("personel");
-            $table->foreign("message_id")->references("id")->on("messages");
             $table->foreign("personel_target")->references("id")->on("personel");
-            $table->timestamps(); 
+            $table->timestamps();
         });
     }
 
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists("replay_message");
+        //
     }
 };

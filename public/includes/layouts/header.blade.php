@@ -1,3 +1,5 @@
+<?php //use DB; ?>
+<?php //dd($this_personel[0]->name); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +32,7 @@
   <link rel="stylesheet" href="/dist/css/bootstrap-rtl.min.css">
   <!-- template rtl version -->
   <link rel="stylesheet" href="/dist/css/custom-style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body class="hold-transition sidebar-mini">
@@ -45,13 +48,13 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="index3.html" class="nav-link">خانه</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">تماس</a>
-      </li>
+      </li> -->
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
+    <!-- <form class="form-inline ml-3">
       <div class="input-group input-group-sm">
         <input class="form-control form-control-navbar" type="search" placeholder="جستجو" aria-label="Search">
         <div class="input-group-append">
@@ -60,20 +63,20 @@
           </button>
         </div>
       </div>
-    </form>
-
+    </form> -->
+  <?php //dd($last_message->Count()); ?>
     <!-- Right navbar links -->
     <ul class="navbar-nav mr-auto">
       <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fa fa-comments-o"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
+          <span class="badge badge-danger navbar-badge"><?php //echo $last_message->Count(); ?></span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-left">
-          <a href="#" class="dropdown-item">
+          <a href="#" class="dropdown-item"> -->
             <!-- Message Start -->
-            <div class="media">
+            <!-- <div class="media">
               <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 ml-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
@@ -83,13 +86,13 @@
                 <p class="text-sm">با من تماس بگیر لطفا...</p>
                 <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 ساعت قبل</p>
               </div>
-            </div>
+            </div> -->
             <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <!-- </a> -->
+          <!-- <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item"> -->
             <!-- Message Start -->
-            <div class="media">
+            <!-- <div class="media">
               <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle ml-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
@@ -99,29 +102,31 @@
                 <p class="text-sm">من پیامتو دریافت کردم</p>
                 <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i> 4 ساعت قبل</p>
               </div>
-            </div>
+            </div> -->
             <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <!-- </a> -->
+          <!-- <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item"> -->
             <!-- Message Start -->
-            <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle ml-3">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  سارا وکیلی
-                  <span class="float-left text-sm text-warning"><i class="fa fa-star"></i></span>
-                </h3>
-                <p class="text-sm">پروژه اتون عالی بود مرسی واقعا</p>
-                <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i>4 ساعت قبل</p>
-              </div>
-            </div>
+            <?php //foreach($last_message as $message) { ?>
+            <!-- <div class="media"> -->
+              <!-- <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle ml-3"> -->
+              <!-- <div class="media-body">
+                <h3 class="dropdown-item-title"> -->
+                  <?php // $personel_who_send = DB::table("personel")->where("id",$message->personel_target)->get();echo $personel_who_send[0]->name; ?>
+                  <!-- <span class="float-left text-sm text-warning"><i class="fa fa-star"></i></span>
+                </h3> -->
+                <!-- <p class="text-sm"><?php// echo $message->content; ?></p> -->
+                <!-- <p class="text-sm text-muted"><i class="fa fa-clock-o mr-1"></i>4 ساعت قبل</p> -->
+              <!-- </div>
+            </div> -->
+            <?php //} ?>
             <!-- Message End -->
-          </a>
+          <!-- </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">مشاهده همه پیام‌ها</a>
-        </div>
-      </li>
+          <a href="#" class="dropdown-item dropdown-footer">مشاهده همه پیام‌ها</a> -->
+        <!-- </div> -->
+      <!-- </li> -->
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
