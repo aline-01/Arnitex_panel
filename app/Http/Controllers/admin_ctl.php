@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\personel_m;
 use App\Models\admins_m;
 use App\Models\message_m;
+use App\Models\admin_message_m;
+use App\Models\admin_message_replay_m;
 
 class admin_ctl extends Controller
 {
@@ -70,7 +72,7 @@ class admin_ctl extends Controller
         }else {
             //i don't know how to make this 
             // ): 
-            dd(request()->all());
+            var_dump($_POST);
         }
     }
     public function recent_message() {
@@ -95,5 +97,33 @@ class admin_ctl extends Controller
     }
     public function send_file() {
         echo "Hello world";
+    }
+    public function personel_messages() {
+        $all_messages = admin_message_m::all();
+        return view("admin_area/pages/personel_messages",[
+            "all_message"=>$all_messages,
+        ]);
+    }
+    public function replay_message($message_id) {
+        $message = admin_message_m::where("id",$message_id)->get();
+        $sender = personel_m::where("id",$message[0]->sender)->get();
+        if (!isset($_POST["submit"])) {
+            return view("admin_area/pages/replay_to_message",[
+                "message_content"=>$message,
+                "who_send"=>$sender,
+            ]);
+        }else {
+            $Validation = Validator::make(request()->all(),[
+                "text"=>"required|",
+                // 'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ],[
+                "text.required"=>"لطفا متن پاسخ را تایپ کنید", 
+            ])->validate();            
+            admin_message_replay_m::create([
+                "content"=>request()->text,
+                "message_id"=>$message_id,
+            ]);
+            return redirect()->back()->with("message_send","پاسخ ارسال شده است");
+        }  
     }
 }

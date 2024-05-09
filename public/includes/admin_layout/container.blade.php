@@ -49,7 +49,7 @@
               <a href="#" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
                 <p>
-                ارسال پیام
+                پیام ها
                   <i class="right fa fa-angle-left"></i>
                 </p>
               </a>
@@ -65,6 +65,13 @@
                   <a href="/admin area/message/recent message" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>پیام های اخیر</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/admin area/message/personel messages list" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>پیام های کاربران</p>
                   </a>
                 </li>
             </li>

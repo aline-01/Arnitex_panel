@@ -101,7 +101,7 @@
                       <i class="fa fa-ellipsis-v"></i>
                     </span>
                     <!-- checkbox -->
-                    <input type="checkbox" class="personel_btn" value="<?php echo $personel->id ?>" name="personel_<?php echo "id"; ?>">
+                    <input type="checkbox" class="personel_btn" value="<?php echo $personel->id ?>" name="personel_<?php echo $personel->id; ?>">
                     <!-- todo text -->
                     <span class="text"><?php echo $personel->name; ?></span>
                     <!-- Emphasis label -->

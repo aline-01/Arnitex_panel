@@ -70,7 +70,7 @@
             <!-- /.card -->
 
             <!-- DIRECT CHAT -->
-            <div class="card direct-chat direct-chat-primary">
+            <!-- <div class="card direct-chat direct-chat-primary">
               <div class="card-header">
                 <h3 class="card-title">گفتگو</h3>
 
@@ -86,80 +86,80 @@
                   <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i>
                   </button>
                 </div>
-              </div>
+              </div> -->
               <!-- /.card-header -->
-              <div class="card-body">
+              <!-- <div class="card-body"> -->
                 <!-- Conversations are loaded here -->
-                <div class="direct-chat-messages">
+                <!-- <div class="direct-chat-messages"> -->
                   <!-- Message. Default to the left -->
-                  <div class="direct-chat-msg">
+                  <!-- <div class="direct-chat-msg">
                     <div class="direct-chat-info clearfix">
                       <span class="direct-chat-name float-left">حسام موسوی</span>
                       <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                    </div>
+                    </div> -->
                     <!-- /.direct-chat-info -->
-                    <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                    <!-- <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image"> -->
                     <!-- /.direct-chat-img -->
-                    <div class="direct-chat-text">
+                    <!-- <div class="direct-chat-text">
                       واقعا این قالب رایگانه ؟ قابل باور نیست
-                    </div>
+                    </div> -->
                     <!-- /.direct-chat-text -->
-                  </div>
+                  <!-- </div> -->
                   <!-- /.direct-chat-msg -->
 
                   <!-- Message to the right -->
-                  <div class="direct-chat-msg right">
+                  <!-- <div class="direct-chat-msg right">
                     <div class="direct-chat-info clearfix">
                       <span class="direct-chat-name float-right">سارا</span>
                       <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-                    </div>
+                    </div> -->
                     <!-- /.direct-chat-info -->
-                    <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                    <!-- <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image"> -->
                     <!-- /.direct-chat-img -->
-                    <div class="direct-chat-text">
-                      بهتره اینو باور کنی :)
-                    </div>
+                    <!-- <div class="direct-chat-text"> -->
+                      <!-- بهتره اینو باور کنی :) -->
+                    <!-- </div> -->
                     <!-- /.direct-chat-text -->
-                  </div>
+                  <!-- </div> -->
                   <!-- /.direct-chat-msg -->
 
                   <!-- Message. Default to the left -->
-                  <div class="direct-chat-msg">
+                  <!-- <div class="direct-chat-msg">
                     <div class="direct-chat-info clearfix">
                       <span class="direct-chat-name float-left">حسام موسوی</span>
                       <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
-                    </div>
+                    </div> -->
                     <!-- /.direct-chat-info -->
-                    <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image">
+                    <!-- <img class="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image"> -->
                     <!-- /.direct-chat-img -->
-                    <div class="direct-chat-text">
+                    <!-- <div class="direct-chat-text">
                       میخوام با این قالب یه اپلیکیشن باحال بزنم ؟‌ تو هم همکاری میکنی ؟
-                    </div>
+                    </div> -->
                     <!-- /.direct-chat-text -->
-                  </div>
+                  <!-- </div> -->
                   <!-- /.direct-chat-msg -->
 
                   <!-- Message to the right -->
-                  <div class="direct-chat-msg right">
+                  <!-- <div class="direct-chat-msg right">
                     <div class="direct-chat-info clearfix">
                       <span class="direct-chat-name float-right">سارا</span>
                       <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
-                    </div>
+                    </div> -->
                     <!-- /.direct-chat-info -->
-                    <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image">
+                    <!-- <img class="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image"> -->
                     <!-- /.direct-chat-img -->
-                    <div class="direct-chat-text">
+                    <!-- <div class="direct-chat-text">
                       اره حتما
-                    </div>
+                    </div> -->
                     <!-- /.direct-chat-text -->
-                  </div>
+                  <!-- </div> -->
                   <!-- /.direct-chat-msg -->
 
-                </div>
+                <!-- </div> -->
                 <!--/.direct-chat-messages-->
 
                 <!-- Contacts are loaded here -->
-                <div class="direct-chat-contacts">
+                <!-- <div class="direct-chat-contacts">
                   <ul class="contacts-list">
                     <li>
                       <a href="#">
@@ -171,12 +171,12 @@
                             <small class="contacts-list-date float-left">1397/10/01</small>
                           </span>
                           <span class="contacts-list-msg">تا حالا کجا بودی ؟‌من...</span>
-                        </div>
+                        </div> -->
                         <!-- /.contacts-list-info -->
-                      </a>
-                    </li>
+                      <!-- </a> -->
+                    <!-- </li> -->
                     <!-- End Contact Item -->
-                    <li>
+                    <!-- <li>
                       <a href="#">
                         <img class="contacts-list-img" src="dist/img/user7-128x128.jpg">
 
@@ -186,12 +186,12 @@
                             <small class="contacts-list-date float-left">2/23/2015</small>
                           </span>
                           <span class="contacts-list-msg">تا حالا منتظر تو بودم...</span>
-                        </div>
+                        </div> -->
                         <!-- /.contacts-list-info -->
-                      </a>
-                    </li>
+                      <!-- </a> -->
+                    <!-- </li> -->
                     <!-- End Contact Item -->
-                    <li>
+                    <!-- <li>
                       <a href="#">
                         <img class="contacts-list-img" src="dist/img/user3-128x128.jpg">
 
@@ -201,12 +201,12 @@
                             <small class="contacts-list-date float-left">2/20/2015</small>
                           </span>
                           <span class="contacts-list-msg">پس بیشتر صبر کن تا برگردم...</span>
-                        </div>
+                        </div> -->
                         <!-- /.contacts-list-info -->
-                      </a>
-                    </li>
+                      <!-- </a> -->
+                    <!-- </li> -->
                     <!-- End Contact Item -->
-                    <li>
+                    <!-- <li>
                       <a href="#">
                         <img class="contacts-list-img" src="dist/img/user5-128x128.jpg">
 
@@ -216,12 +216,12 @@
                             <small class="contacts-list-date float-left">2/10/2015</small>
                           </span>
                           <span class="contacts-list-msg"> حالتون چطورههههه !...</span>
-                        </div>
+                        </div> -->
                         <!-- /.contacts-list-info -->
-                      </a>
-                    </li>
+                      <!-- </a> -->
+                    <!-- </li> -->
                     <!-- End Contact Item -->
-                    <li>
+                    <!-- <li>
                       <a href="#">
                         <img class="contacts-list-img" src="dist/img/user6-128x128.jpg">
 
@@ -231,12 +231,12 @@
                             <small class="contacts-list-date float-left">1/27/2015</small>
                           </span>
                           <span class="contacts-list-msg">عالیییییییییی...</span>
-                        </div>
+                        </div> -->
                         <!-- /.contacts-list-info -->
-                      </a>
-                    </li>
+                      <!-- </a> -->
+                    <!-- </li> -->
                     <!-- End Contact Item -->
-                    <li>
+                    <!-- <li>
                       <a href="#">
                         <img class="contacts-list-img" src="dist/img/user8-128x128.jpg">
 
@@ -246,18 +246,18 @@
                             <small class="contacts-list-date float-left">1/4/2015</small>
                           </span>
                           <span class="contacts-list-msg">بیخیالش پیداش میکنم...</span>
-                        </div>
+                        </div> -->
                         <!-- /.contacts-list-info -->
-                      </a>
-                    </li>
+                      <!-- </a> -->
+                    <!-- </li> -->
                     <!-- End Contact Item -->
-                  </ul>
+                  <!-- </ul> -->
                   <!-- /.contacts-list -->
-                </div>
+                <!-- </div> -->
                 <!-- /.direct-chat-pane -->
-              </div>
+              <!-- </div> -->
               <!-- /.card-body -->
-              <div class="card-footer">
+              <!-- <div class="card-footer">
                 <form action="#" method="post">
                   <div class="input-group">
                     <input type="text" name="message" placeholder="Type Message ..." class="form-control">
@@ -266,13 +266,13 @@
                     </span>
                   </div>
                 </form>
-              </div>
+              </div> -->
               <!-- /.card-footer-->
-            </div>
+            <!-- </div> -->
             <!--/.direct-chat -->
 
             <!-- TO DO List -->
-            <div class="card">
+            <!-- <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="ion ion-clipboard mr-1"></i>
@@ -288,24 +288,24 @@
                     <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
                   </ul>
                 </div>
-              </div>
+              </div> -->
               <!-- /.card-header -->
-              <div class="card-body">
+              <!-- <div class="card-body">
                 <ul class="todo-list">
-                  <li>
+                  <li> -->
                     <!-- drag handle -->
-                    <span class="handle">
+                    <!-- <span class="handle">
                       <i class="fa fa-ellipsis-v"></i>
                       <i class="fa fa-ellipsis-v"></i>
-                    </span>
+                    </span> -->
                     <!-- checkbox -->
-                    <input type="checkbox" value="" name="">
+                    <!-- <input type="checkbox" value="" name=""> -->
                     <!-- todo text -->
-                    <span class="text">طراحی یک قالب زیبا</span>
+                    <!-- <span class="text">طراحی یک قالب زیبا</span> -->
                     <!-- Emphasis label -->
-                    <small class="badge badge-danger"><i class="fa fa-clock-o"></i> 2 دقیقه</small>
+                    <!-- <small class="badge badge-danger"><i class="fa fa-clock-o"></i> 2 دقیقه</small> -->
                     <!-- General tools such as edit or delete-->
-                    <div class="tools">
+                    <!-- <div class="tools">
                       <i class="fa fa-edit"></i>
                       <i class="fa fa-trash-o"></i>
                     </div>
@@ -376,12 +376,12 @@
                     </div>
                   </li>
                 </ul>
-              </div>
+              </div> -->
               <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <button type="button" class="btn btn-info float-right"><i class="fa fa-plus"></i> جدید</button>
-              </div>
-            </div>
+              <!-- <div class="card-footer clearfix"> -->
+                <!-- <button type="button" class="btn btn-info float-right"><i class="fa fa-plus"></i> جدید</button> -->
+              <!-- </div> -->
+            <!-- </div> -->
             <!-- /.card -->
           </section>
           <!-- /.Left col -->

@@ -64,7 +64,7 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="./index.html" class="nav-link">
+                  <a href="/message/send message for manager" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>ارسال به مدیریت</p>
                   </a>

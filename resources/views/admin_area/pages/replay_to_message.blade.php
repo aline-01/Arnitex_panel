@@ -1,6 +1,6 @@
 <?php include("includes/layouts/header.blade.php") ?>
   <!-- Main Sidebar Container -->
-  <?php include("includes/layouts/contanier.blade.php"); ?>
+  <?php include("includes/admin_layout/container.blade.php"); ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php if ($errors->any()) { ?>
 <script>
@@ -12,20 +12,7 @@
   }); 
   </script>
 <?php } ?>
-<?php  if (!empty(session("message_send_to_admin"))) {
-    ?>
-      <script>
-      Swal.fire({
-        icon: "success",
-        // title: "خطا",
-        text: "<?php echo session("message_send_to_admin"); ?>",
-      // footer: '<a href="#">Why do I have this issue?</a>'
-      }); 
-      </script>
-    
-  <?php } ?>
-
-<!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -56,7 +43,7 @@
               </h3> -->
               <!-- tools box -->
               <div class="card-tools">
-                <!-- <button type="button" class="btn btn-tool btn-sm"
+                <button type="button" class="btn btn-tool btn-sm"
                         data-widget="collapse"
                         data-toggle="tooltip"
                         title="Collapse">
@@ -68,38 +55,52 @@
                         title="Remove">
                   <i class="fa fa-times"></i>
                 </button>
-              </div> -->
-              <!-- /. tools -->
+              </div>
+              <!-- /. tools .\-->
             </div>
+            <!-- /.card-header -->
+            <form action="/admin area/message/replay message/<?php echo $message_content[0]->id ?>" method="POST">
+              @csrf
+              <div class="card-body">
+              <div class="mb-3">
+              <p class="text-justify">حال پاسخ به <b class="font-weight-bold"><?php echo $who_send[0]->name ?></b></p>
+              <br>
+              <p class="text-justify font-weight-bold">متن پیام :</p>
+              <p><?php echo $message_content[0]->content ?></p>
+              </div>
+              <!-- <p class="text-sm mb-0">مشاهده مستندات مربوط به این ویرایشگر متن <a href="https://ckeditor.com/ckeditor-5-builds/#classic">CKEditor</a> -->
+              </p>
+            </div>
+          </div>
           <!-- /.card -->
 
+          <div class="card card-outline card-info">
             <div class="card-header">
               <h3 class="card-title">
-                <!-- <small>ساده و سریع</small> -->
+                <small>لطفا متن پاسخ را تایپ کنید</small>
                 <!-- tools box -->
               </h3>
-              <form action="/message/send message for manager" method="POST">
-                @csrf
-                <div class="card-tools">
+              <div class="card-tools">
                 <button type="button" class="btn btn-tool btn-sm" data-widget="collapse" data-toggle="tooltip"
                         title="Collapse">
                   <i class="fa fa-minus"></i></button>
                 <button type="button" class="btn btn-tool btn-sm" data-widget="remove" data-toggle="tooltip"
                         title="Remove">
-                  <i class="fa fa-times"></i></button>  
+                  <i class="fa fa-times"></i></button>
               </div>
               <!-- /. tools -->
             </div>
             <!-- /.card-header -->
             <div class="card-body pad">
               <div class="mb-3">
-                <textarea name="text" class="textarea" placeholder="لطفا متن خود را وارد کنید"
+                <textarea name="text" class="textarea" placeholder="لطفا متن پاسخ را تایپ کنید"
                           style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
               <!-- <p class="text-sm mb-0">
                 مشاهده <a href="https://github.com/bootstrap-wysiwyg/bootstrap3-wysiwyg">مستندات و توضیحات این ویرایشگر</a>
               </p> -->
             </div>
+
             <button class="btn" name="submit" style="font-size:18px;">ارسال پیام</button>
           </form>
           </div>

@@ -5,6 +5,7 @@ use App\Models\personel_m;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\message_m;
+use App\Models\admin_message_m;
 require_once("includes/jdf.php");
 
 class messages_ctl extends Controller
@@ -42,7 +43,25 @@ class messages_ctl extends Controller
         ]);
     }
     public function send_message_to_admin() {
-        return view("personel_area/pages/message_to_admin");
+        if (!isset($_POST["submit"])) {
+            return view("personel_area/pages/message_to_admin");
+        }else {
+            $Validation = Validator::make(request()->all(),[
+                // "personel"=>"required",
+                "text"=>"required",
+            ],[
+                // "personel.required"=>"کارمند مد نظر برای ارسال پیام رو مشخص کنید",
+                "text.required"=>"لطفا متنی را که می خواهید ارسال کنید بنویسید",
+            ])->validate();
+            admin_message_m::create([
+                "sender"=>request()->session()->get("personel_access"),
+                "content"=>request()->text,
+            ]);
+            return redirect()->back()->with("message_send_to_admin","پیام شما برای مدیریت ارسال شد");
+        }
+    }
+    public function replay_message() {
+        echo "Hello world";        
     }
     
 }
