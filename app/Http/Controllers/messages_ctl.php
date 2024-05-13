@@ -5,6 +5,7 @@ use App\Models\personel_m;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Models\message_m;
+use App\Models\replay_message;
 use App\Models\admin_message_m;
 require_once("includes/jdf.php");
 
@@ -60,8 +61,30 @@ class messages_ctl extends Controller
             return redirect()->back()->with("message_send_to_admin","پیام شما برای مدیریت ارسال شد");
         }
     }
-    public function replay_message() {
-        echo "Hello world";        
+    public function replay_message($message_id) {
+        $this_message = message_m::where("id",$message_id)->get();
+        $who_send =  personel_m::where("id",$this_message[0]->personel_id)->get();
+        if (!isset($_POST["submit"])) {
+            return view("personel_area/pages/replay_message",[
+                "message_content"=>$this_message,
+                "who_send"=>$who_send,
+            ]);
+        }else {
+            $Validation = Validator::make(request()->all(),[
+                "text"=>"required|",
+                // 'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ],[
+                "text.required"=>"لطفا متن پاسخ را تایپ کنید", 
+            ])->validate();            
+            replay_message::create([
+                "content"=>request()->text,
+                "personel_id"=>request()->session()->get("personel_access"),
+                "personel_target"=>$who_send[0]->id,
+                "message_id"=>$message_id,
+                "send_data"=>"This is builtshit ",//this is builtshit don't care about this
+            ]);
+            return redirect()->back()->with("message_send","پاسخ ارسال شده است");
+        }
     }
     
 }

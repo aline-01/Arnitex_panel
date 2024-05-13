@@ -25,14 +25,29 @@ Route::prefix("/admin area")->group(function() {
         Route::get("/personel list",$admin_ctl."@personel_list")->middleware("App\Http\Middleware\admin_access");
         Route::get("/delete personel/{personel_id}",$admin_ctl."@delete_personel")->middleware("App\Http\Middleware\admin_access");
     });
-    Route::get("/message/public message",$admin_ctl."@public_message")->middleware("App\Http\Middleware\admin_access");
-    Route::post("/message/public message",$admin_ctl."@public_message")->middleware("App\Http\Middleware\admin_access");
-    Route::get("/message/recent message",$admin_ctl."@recent_message")->middleware("App\Http\Middleware\admin_access");
-    Route::post("/message/recent message",$admin_ctl."@recent_message")->middleware("App\Http\Middleware\admin_access");
-    Route::get("/message/personel messages list",$admin_ctl."@personel_messages")->middleware("App\Http\Middleware\admin_access");
-    Route::get("/file/send file",$admin_ctl."@send_file")->middleware("App\Http\Middleware\admin_access");
-    Route::get("/message/replay message/{id}",$admin_ctl."@replay_message")->middleware("App\Http\Middleware\admin_access");
-    Route::post("/message/replay message/{id}",$admin_ctl."@replay_message")->middleware("App\Http\Middleware\admin_access");
+    Route::prefix("/message")->group(function() {
+        $admin_ctl = "App\Http\Controllers\admin_ctl";
+        Route::get("/public message",$admin_ctl."@public_message")->middleware("App\Http\Middleware\admin_access");
+        Route::post("/public message",$admin_ctl."@public_message")->middleware("App\Http\Middleware\admin_access");
+        Route::get("/recent message",$admin_ctl."@recent_message")->middleware("App\Http\Middleware\admin_access");
+        Route::post("/recent message",$admin_ctl."@recent_message")->middleware("App\Http\Middleware\admin_access");
+        Route::get("/personel messages list",$admin_ctl."@personel_messages")->middleware("App\Http\Middleware\admin_access");
+        Route::get("/replay message/{id}",$admin_ctl."@replay_message")->middleware("App\Http\Middleware\admin_access");
+        Route::post("/replay message/{id}",$admin_ctl."@replay_message")->middleware("App\Http\Middleware\admin_access");
+    });
+    Route::prefix("/files")->group(function() {
+        $admin_ctl = "App\Http\Controllers\admin_ctl";
+        Route::get("/send file",$admin_ctl."@public_file")->middleware("App\Http\Middleware\admin_access");
+        Route::post("/send file",$admin_ctl."@public_file")->middleware("App\Http\Middleware\admin_access");
+        Route::get("/all files",$admin_ctl."@all_files")->middleware("App\Http\Middleware\admin_access");
+        Route::get("/delete file/{file_id}",$admin_ctl."@delete_file");
+    });
+    Route::prefix("/tasks")->group(function() {
+        $admin_ctl = "App\Http\Controllers\admin_ctl";
+        Route::get("/add task",$admin_ctl."@add_task")->middleware("App\Http\Middleware\admin_access");
+        
+    });
+
 
 });
 
@@ -53,7 +68,8 @@ Route::prefix("/message")->group(function() {
     Route::get("/all message",$message_ctl."@all_messages")->middleware("App\Http\Middleware\personel_access");
     Route::get("/send message for manager",$message_ctl."@send_message_to_admin");
     Route::post("/send message for manager",$message_ctl."@send_message_to_admin");
-    Route::get("/replay message",$message_ctl."@replay_message");
+    Route::get("/replay message/{message_id}",$message_ctl."@replay_message");
+    Route::post("/replay message/{message_id}",$message_ctl."@replay_message");
 });
 
 Route::prefix("/personel")->group(function() {

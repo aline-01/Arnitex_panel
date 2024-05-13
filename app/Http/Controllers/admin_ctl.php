@@ -3,10 +3,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\personel_m;
-use App\Models\admins_m;
 use App\Models\message_m;
 use App\Models\admin_message_m;
 use App\Models\admin_message_replay_m;
+use App\Models\file_m;
 
 class admin_ctl extends Controller
 {
@@ -14,7 +14,7 @@ class admin_ctl extends Controller
         if (!isset($_POST["password"])) {
             return view("admin_area/pages/login");
         }else {
-            $this_admin = admins_m::where("password",request()->password)->get();
+            $this_admin = personel_m::where("perosnel_code",request()->password)->where("access","admin")->get();
             if ($this_admin->Count() > 0) {
                 //set the session of the access to panel
                 $name = "admin_access";
@@ -72,8 +72,48 @@ class admin_ctl extends Controller
         }else {
             //i don't know how to make this 
             // ): 
-            var_dump($_POST);
+            // dd(request()->all());
+            $array_of_personel_id = $headers = explode(',', $_POST["all_personel_data"]);
+            foreach($array_of_personel_id as $personel_must_send) {
+                message_m::create([
+                    "content"=>request()->text,
+                    "personel_target"=>$personel_must_send,
+                    "personel_id"=>request()->session()->get("admin_access"),
+                    "send_data"=>"asdasd",
+                ]);
+            }
+            return redirect()->back()->with("public_message_have_been_send","پیام برای افراد ارسال شد");
         }
+    }
+    public function public_file() {
+        $all_personel = personel_m::all();
+        if (!isset($_POST["submit"])) {
+            return view("admin_area/pages/file_message",[
+                "all_personel"=>$all_personel,
+            ]);
+        }else {                
+            // $path = "files/".$the_file["name"];
+            // $is_file_upload = move_uploaded_file($the_file["tmp_name"],$path);
+            //save the file --------------
+            $the_file = $_FILES["the_file"];
+            $path = "files/".$the_file["name"];
+            $is_file_uploaded = move_uploaded_file($the_file["tmp_name"],$path);
+            if (!$is_file_uploaded) {
+                return redirect()->back()->with("unable_to_upload_file","بارگذاری پرونده ممکن نیست دوباره امتحان کنید یا با مدیر تماس بگیرید و این را گزارش کنید");
+            }    
+            //-------------------
+            $array_of_personel_id = $headers = explode(',', $_POST["all_personel_data"]);
+            foreach($array_of_personel_id as $personel_must_send) {
+                file_m::create([
+                    "name"=>$the_file['name'],
+                    "path"=>$path,
+                    "personel_id"=>request()->session()->get('admin_access'),
+                    "personel_target"=>$personel_must_send,
+                ]);
+            }
+            return redirect()->back()->with("file_have_been_send","فایل ارسال شد");
+        }
+
     }
     public function recent_message() {
         if (isset($_POST["personel"]) && $_POST["personel"] == "all") {
@@ -94,9 +134,6 @@ class admin_ctl extends Controller
             "all_personel"=>$all_personel,
             "all_message"=>$all_messages,
         ]);
-    }
-    public function send_file() {
-        echo "Hello world";
     }
     public function personel_messages() {
         $all_messages = admin_message_m::all();
@@ -126,4 +163,20 @@ class admin_ctl extends Controller
             return redirect()->back()->with("message_send","پاسخ ارسال شده است");
         }  
     }
+    public function all_files() {
+        $all_files = file_m::all();
+        return view("personel_area/pages/all_files",[
+            "all_file"=>$all_files,
+        ]);
+    }
+    public function delete_file($file_id) {
+        file_m::destroy($file_id);
+        return redirect()->back()->with("file_has_deleted","پرونده حذف شد");
+    }
+    public function add_task() {
+        echo "<center>";
+        echo "<h1>Hello world</h1>";
+        echo "</center>";
+    }
+
 }

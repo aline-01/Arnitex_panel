@@ -33,12 +33,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>فرم‌های پیشرفته</h1>
+            <h1>اضافه کردن کاربران</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="#">خانه</a></li>
-              <li class="breadcrumb-item active">فرم‌های پیشرفته</li>
+              <li class="breadcrumb-item active">اضافه کردن کاربران</li>
             </ol>
           </div>
         </div>

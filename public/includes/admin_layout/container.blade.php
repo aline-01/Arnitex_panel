@@ -64,7 +64,7 @@
                 <li class="nav-item">
                   <a href="/admin area/message/recent message" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>پیام های اخیر</p>
+                    <p>همه پیام ها از کاربران</p>
                   </a>
                 </li>
 
@@ -87,20 +87,50 @@
               </a>
               <ul class="nav nav-treeview">
                  <li class="nav-item">
-                  <a href="/admin area/file/send" class="nav-link">
+                  <a href="/admin area/files/send file" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
                     <p>ارسال فایل ها</p>
                   </a>
                 </li>
 
                 <li class="nav-item">
-                  <a href="/admin area/message/recent message" class="nav-link">
+                  <a href="/admin area/files/all files" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>لیست تمامی فایل ها</p>
+                    <p> لیست تمامی فایل ها</p>
                   </a>
                 </li>
             </li>
-            </ul>        
+            </ul>
+            
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                لیست وظایف
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                  <a href="/admin area/tasks/add task" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>اضافه کردن وظایف</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/admin area/files/all files" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> لیست تمام وظایف و مدیریت انها</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/admin area/files/all files" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>بازخورد وظایف</p>
+                  </a>
+                </li>
+            </li>        
            <!-- <li class="nav-item">
               <a href="pages/widgets.html" class="nav-link">
                 <i class="nav-icon fa fa-th"></i>

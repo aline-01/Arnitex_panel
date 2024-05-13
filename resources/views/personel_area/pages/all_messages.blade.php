@@ -158,7 +158,7 @@
                     <td class="mailbox-subject"><?php echo $message->content; ?>
                     </td>
                     <td class="mailbox-attachment"></td>
-                    <td class="mailbox-date"><a href="/rest/imagendery">پاسخ</a></td>
+                    <td class="mailbox-date"><a href="/message/replay message/<?php echo $message->id ?>">پاسخ</a></td>
                   </tr>
                   <?php } ?>
                   <!-- <tr>

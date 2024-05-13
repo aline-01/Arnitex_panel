@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string("name");
             $table->string("position");
             $table->string("perosnel_code");
+            $table->enum("access",["admin","user"])->default("user");
             $table->timestamps();
         });
     }

@@ -19,12 +19,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>ویرایشگر متن</h1>
+            <h1>همه پیام ها از کاربران</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="#">خانه</a></li>
-              <li class="breadcrumb-item active">ویرایشگر متن</li>
+              <li class="breadcrumb-item active">همه پیام ها از کاربران</li>
             </ol>
           </div>
         </div>
@@ -73,6 +73,9 @@
                     <option value="<?php echo $personel->id ?>"><?php echo $personel->name ?></option>
                     <?php } ?>
               </select>
+              <script>
+                // some script need's to write in here
+              </script>
               <!-- <input type="hidden" name="submit"> -->
 
               </div>
@@ -127,7 +130,7 @@
                   <tbody>
                   <?php foreach($all_message as $message) { ?>
                   <?php $who_send = DB::table("personel")->where("id",$message->personel_id)->get(); ?>
-                  <tr>
+                  <tr>  
                     <td><div class="icheckbox_flat-blue" style="position: relative;" aria-checked="false" aria-disabled="false"><input type="checkbox" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255) none repeat scroll 0% 0%; border: 0px none; opacity: 0;"></ins></div></td>
                     <td class="mailbox-star"><a href="#"><i class="fa fa-star text-warning"></i></a></td>
                     <td class="mailbox-name"><a href="read-mail.html"><?php echo $who_send[0]->name ?></a></td>

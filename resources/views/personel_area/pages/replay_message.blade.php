@@ -1,6 +1,6 @@
 <?php include("includes/layouts/header.blade.php") ?>
   <!-- Main Sidebar Container -->
-  <?php include("includes/admin_layout/container.blade.php"); ?>
+  <?php include("includes/layouts/contanier.blade.php"); ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php if ($errors->any()) { ?>
 <script>
@@ -59,7 +59,7 @@
               <!-- /. tools .\-->
             </div>
             <!-- /.card-header -->
-            <form action="/admin area/message/replay message/<?php echo $message_content[0]->id ?>" method="POST">
+            <form action="/message/replay message/<?php echo $message_content[0]->id ?>" method="POST">
               @csrf
               <div class="card-body">
               <div class="mb-3">

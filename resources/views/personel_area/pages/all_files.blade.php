@@ -1,9 +1,23 @@
 <?php include("includes/layouts/header.blade.php") ?>
   <!-- Main Sidebar Container -->
-  <?php include("includes/layouts/contanier.blade.php"); ?>
+  <?php include("includes/admin_layout/container.blade.php"); ?>
   <?php //use DB; ?>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <?php  if (!empty(session("error_upload_file"))) {
+  <?php  if (!empty(session("file_has_deleted"))) {
+    ?>
+      <script>
+      Swal.fire({
+        icon: "success",
+        // title: "خطا",
+        text: "<?php echo session("file_has_deleted"); ?>",
+      // footer: '<a href="#">Why do I have this issue?</a>'
+      }); 
+      </script>
+    
+  <?php } ?>
+
+
+<?php  if (!empty(session("error_upload_file"))) {
     ?>
       <script>
       Swal.fire({
@@ -45,12 +59,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>ویرایشگر متن</h1>
+            <h1>تمام فایل های کاربران</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
               <li class="breadcrumb-item"><a href="#">خانه</a></li>
-              <li class="breadcrumb-item active">ویرایشگر متن</li>
+              <li class="breadcrumb-item active">تمام فایل ها</li>
             </ol>
           </div>
         </div>
@@ -80,7 +94,7 @@
       <td><?php echo $file["name"] ?></td>
       <td><?php echo $who_send[0]->name ?></td>
       <td><a href="/<?php echo $file["path"]; ?>" class="btn btn-success">دانلود</a></td>
-      <td><a href="" class="btn btn-danger">حذف</a></td>
+      <td><a href="/admin area/files/delete file/<?php echo $file->id; ?>" class="btn btn-danger">حذف</a></td>
     </tr>
     <?php } ?>
   </tbody>
