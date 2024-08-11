@@ -1,10 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\personel_m;
 use App\Models\file_m;
+use App\Models\tasks_m;
+
 
 class personel_ctl extends Controller
 {
@@ -68,14 +69,20 @@ class personel_ctl extends Controller
                 return redirect()->back()->with("error_upload_file","بارگذاری پرونده ممکن نیست دوباره امتحان کنید یا با مدیر تماس بگیرید و این را گزارش کنید");
 
             }
-        }
-        
+        }        
     }
     public function all_file_list() {
         $this_personel = request()->session()->get("personel_access");
         $all_files = file_m::where("personel_target",$this_personel)->get();
         return view("personel_area/pages/all_files",[
             "all_file"=>$all_files,
+        ]);
+    }
+    public function task_list() {
+        $cureent_personel = request()->session()->get("personel_access");//user who login now
+        $all_task = tasks_m::where("personel_id",$cureent_personel)->get();
+        return view("personel_area/pages/tasks_list",[
+            "all_task"=>$all_task,
         ]);
     }
 }

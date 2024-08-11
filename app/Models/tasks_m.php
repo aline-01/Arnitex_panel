@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class admin_message_replay_m extends Model
+class tasks_m extends Model
 {
-    protected $table = "admin_message_replay";
-    protected $fillable = ["content","message_id"];
+    protected $table = "task_list";
+    protected $fillable = ["title","descryption","file","personel_id","is_it_done"];
     use HasFactory;
 }

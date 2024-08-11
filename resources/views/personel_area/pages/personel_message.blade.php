@@ -82,22 +82,6 @@
           <!-- /.card -->
 
           <div class="card card-outline card-info">
-            <div class="card-header">
-              <h3 class="card-title">
-                <small>ساده و سریع</small>
-                <!-- tools box -->
-              </h3>
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool btn-sm" data-widget="collapse" data-toggle="tooltip"
-                        title="Collapse">
-                  <i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-tool btn-sm" data-widget="remove" data-toggle="tooltip"
-                        title="Remove">
-                  <i class="fa fa-times"></i></button>
-              </div>
-              <!-- /. tools -->
-            </div>
-            <!-- /.card-header -->
             <div class="card-body pad">
               <div class="mb-3">
                 <textarea name="text" class="textarea" placeholder="لطفا متن خود را وارد کنید"

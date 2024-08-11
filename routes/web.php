@@ -45,7 +45,8 @@ Route::prefix("/admin area")->group(function() {
     Route::prefix("/tasks")->group(function() {
         $admin_ctl = "App\Http\Controllers\admin_ctl";
         Route::get("/add task",$admin_ctl."@add_task")->middleware("App\Http\Middleware\admin_access");
-        
+        Route::post("/add task",$admin_ctl."@add_task")->middleware("App\Http\Middleware\admin_access");
+
     });
 
 
@@ -70,6 +71,11 @@ Route::prefix("/message")->group(function() {
     Route::post("/send message for manager",$message_ctl."@send_message_to_admin");
     Route::get("/replay message/{message_id}",$message_ctl."@replay_message");
     Route::post("/replay message/{message_id}",$message_ctl."@replay_message");
+});
+
+Route::prefix("/tasks")->group(function() {
+    $personel_ctl = "App\Http\Controllers\personel_ctl";
+    Route::get("/all task list",$personel_ctl."@task_list");
 });
 
 Route::prefix("/personel")->group(function() {

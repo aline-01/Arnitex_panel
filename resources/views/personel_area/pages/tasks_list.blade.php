@@ -1,6 +1,6 @@
 <?php include("includes/layouts/header.blade.php"); ?>
 <!-- Sidebar -->
-  <?php include("includes/admin_layout/container.blade.php"); ?>
+<?php include("includes/layouts/contanier.blade.php"); ?>
   <?php 
     if (!empty(session("personel_delete"))) {
     ?>
@@ -23,39 +23,42 @@
           <table class="table">
 <thead class="thead-dark">
 <tr>
-  <th scope="col">#</th>
-  <th scope="col">نام</th>
-  <th scope="col">موقعیت</th>
-  <th scope="col">شماره تماس</th>
-  <th scope="col">عملیات</th>
+  <!-- <th scope="col">#</th> -->
+  <th scope="col">عنوان</th>
+  <th scope="col">فایل</th>
+  <th scope="col">وضعیت</th>
+  <th scope="col">ارسال بازخورد</th>
 </tr>
 </thead>
 <tbody>
-<?php $id = 1; ?>
-<?php foreach($personel_list as $personel) { ?>
+<?php foreach($all_task as $task) { ?>
 <tr>
-  <th scope="row"><?php echo $id; ?></th>
-  <td><?php echo $personel->name; ?></td>
-  <td><?php echo $personel->position; ?></td>
-  <td><?php echo "09197508922"; ?></td>
-  <td>
-  <a type="button" href="/admin area/personel/delete personel/<?php echo $personel->id; ?>" class="btn btn-danger">حذف</a>
-  <button type="button" class="btn btn-warning">ویرایش اطلاعات</button>
-  </td>
+  <!-- <th scope="row">1</th> -->
+  <td><?php echo $task->title; ?></td>
+  <td>دانلود</td>
+  <td><?php echo $task->descryption; ?></td>
+  <td>ارسال بازخورد</td>
 </tr>
-<?php $id+=1; ?>
 <?php } ?>
 <!-- <tr>
   <th scope="row">2</th>
   <td>Jacob</td>
   <td>Thornton</td>
   <td>@fat</td>
-</tr>
-<tr>
+
+  <td>              <textarea name="text" class="textarea" placeholder="لطفا متن خود را وارد کنید"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+  </td>
+</tr> -->
+<!-- <tr>
   <th scope="row">3</th>
   <td>Larry</td>
   <td>the Bird</td>
   <td>@twitter</td>
+
+  <td>              <textarea name="text" class="textarea" placeholder="لطفا متن خود را وارد کنید"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+  </td>
 </tr> -->
 </tbody>
 </table>

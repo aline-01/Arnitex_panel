@@ -54,6 +54,7 @@
                 </li> -->
               </ul>
             </li>
+          <ul>
             <li class="nav-item has-treeview">
               <a href="" class="nav-link active">
                 <i class="nav-icon fa fa-dashboard"></i>
@@ -82,14 +83,37 @@
                     <p>پیام های اخیر</p>
                   </a>
                 </li>
-                <!-- <li class="nav-item">
-                  <a href="./index3.html" class="nav-link">
+            </li>
+          </ul>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fa fa-dashboard"></i>
+                <p>
+                لیست وظایف
+                  <i class="right fa fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                 <li class="nav-item">
+                  <a href="/tasks/all task list" class="nav-link">
                     <i class="fa fa-circle-o nav-icon"></i>
-                    <p>داشبورد سوم</p>
+                    <p>لیست تمام وظایف شما</p>
                   </a>
                 </li>
-              </ul> -->
-            </li>
+                <li class="nav-item">
+                  <a href="/admin area/files/all files" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p> لیست تمام وظایف و مدیریت انها</p>
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="/admin area/files/all files" class="nav-link">
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>بازخورد وظایف</p>
+                  </a>
+                </li>
+            </li> 
             <!-- <li class="nav-item">
               <a href="pages/widgets.html" class="nav-link">
                 <i class="nav-icon fa fa-th"></i>

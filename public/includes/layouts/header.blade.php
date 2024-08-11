@@ -33,7 +33,7 @@
   <!-- template rtl version -->
   <link rel="stylesheet" href="/dist/css/custom-style.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

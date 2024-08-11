@@ -7,6 +7,7 @@ use App\Models\message_m;
 use App\Models\admin_message_m;
 use App\Models\admin_message_replay_m;
 use App\Models\file_m;
+use App\Models\tasks_m;
 
 class admin_ctl extends Controller
 {
@@ -174,9 +175,52 @@ class admin_ctl extends Controller
         return redirect()->back()->with("file_has_deleted","پرونده حذف شد");
     }
     public function add_task() {
-        echo "<center>";
-        echo "<h1>Hello world</h1>";
-        echo "</center>";
+        if (!isset($_POST["submit"])) {
+            $all_personel_list = personel_m::all();
+            return view("admin_area/pages/add_task",[
+                "all_personel"=>$all_personel_list,
+            ]);
+        }else {
+
+            $Validation = Validator::make(request()->all(),[
+                "title"=>"required|",
+                "descryption"=>"required|",
+                "all_personel_data"=>"required",
+                // 'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ],[
+                "title.required"=>"عنوان باید وارد شود", 
+                "descryption.required"=>"لطفا توضیحات را بنویسید",
+                "all_personel_data.required"=>"حداقل یک نفر را از لیست انتخاب کنید",
+            ])->validate();
+            $file = $_FILES["task_file"];
+            $path = "not_set";
+            if (!empty($file)) {
+                if ($file["error"] != 0) {
+                    $not_set = "not_set";
+                }
+            }else {
+                $not_set = "not_set";
+            }
+            $path = "task_file/".$file["name"];
+            $is_upload = move_uploaded_file($file["tmp_name"],$path);
+            if ($is_upload) {
+                //nothing to do 
+            }else {
+                $path = "not_set";
+            }
+
+            $personel_data = explode(",",$_POST["all_personel_data"]);
+            foreach($personel_data as $data) {
+                tasks_m::create([
+                    "title"=>request()->title,
+                    "descryption"=>request()->descryption,
+                    "personel_id"=>$data,
+                    "file"=>$path,
+                ]);
+            }
+            return redirect()->back()->with("task_added","به لیست وضایف با موفقیت افزوده شد");
+            
+        }
     }
 
 }

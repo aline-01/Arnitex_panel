@@ -14,16 +14,53 @@
   </script>
 <?php } ?>
 
-<?php if (!empty(session("public_message_have_been_send"))) { ?>
+
+<?php if (!empty(session("task_added"))) { ?>
   <script>
   Swal.fire({
     icon: "success",
   // title: "خطا",
-  text: "<?php echo session("public_message_have_been_send");?>",
+  text: "<?php echo session("task_added");?>",
   // footer: '<a href="#">Why do I have this issue?</a>'
   }); 
   </script>
 <?php } ?>
+
+<?php  if (!empty(session("unable_to_upload_file"))) {
+    ?>
+      <script>
+      Swal.fire({
+        icon: "error",
+        // title: "خطا",
+        text: "<?php echo session("unable_to_upload_file"); ?>",
+      // footer: '<a href="#">Why do I have this issue?</a>'
+      }); 
+      </script>
+  <?php } ?>
+
+<?php  if (!empty(session("file_have_been_send"))) {
+    ?>
+      <script>
+      Swal.fire({
+        icon: "success",
+        // title: "خطا",
+        text: "<?php echo session("file_have_been_send"); ?>",
+      // footer: '<a href="#">Why do I have this issue?</a>'
+      }); 
+      </script>
+    
+  <?php } ?>
+  <?php if ($errors->any()) { ?>
+<script>
+  Swal.fire({
+    icon: "error",
+    title: "خطا",
+    text: "<?php echo $errors->all()[0] ?>",
+    // footer: '<a href="#">Why do I have this issue?</a>'
+  }); 
+  </script>
+<?php } ?>
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -89,7 +126,7 @@
                   <i class="ion ion-clipboard mr-1"></i>
                   لیست کار
                 </h3>
-
+                
                 <div class="card-tools">
                   <ul class="pagination pagination-sm">
                     <li class="page-item">
@@ -102,7 +139,7 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <ul class="todo-list">
-                <form action="/admin area/message/public message" class="personel_message_form" method="POST">
+                <form action="/admin area/tasks/add task" enctype="multipart/form-data" class="personel_message_form" method="POST">
                   @csrf
                 <?php foreach($all_personel as $personel) { ?>  
                 <li>
@@ -172,25 +209,38 @@
               <!-- /. tools -->
             </div>
             <!-- /.card-header -->
-            <input type="hidden" name="all_personel_data" class="all_personel_data" id="">
-            <div class="card-body pad">
+          @csrf
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>عنوان:</label>
+                  <input type="text" name="title" class="form-control select2">
+              <br>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>فایل زمیمه (اختیاری):</label>
+                  <input type="file" name="task_file" class="form-control select2">
+
+              <div class="card-body pad">
+              
               <div class="mb-3">
-                <textarea name="text" class="textarea" placeholder="لطفا متن خود را وارد کنید"
+                <textarea name="descryption" class="textarea" placeholder="لطفا متن خود را وارد کنید"
                           style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
-              <!-- <p class="text-sm mb-0">
-                مشاهده <a href="https://github.com/bootstrap-wysiwyg/bootstrap3-wysiwyg">مستندات و توضیحات این ویرایشگر</a>
-              </p> -->
+
+                </div>
+                <!-- /.form-group -->
+                <!-- /.form-group -->
+              </div>
+              </div>
+              <!-- /.col -->
             </div>
-            
-            <button class="btn submit_btn" name="submit" style="font-size:18px;">ارسال پیام</button>
-          </form>
-        </div>
-      </div>
-        <!-- /.col-->
-      </div>
-      <!-- ./row -->
-    </section>
+            <!-- /.row -->
+          </div>
+          <input type="hidden" name="all_personel_data" class="all_personel_data" id="">
+          <!-- /.card-body -->
+          <button class="form-control select2" name="submit">ارسال</button>  
                 <script>
                   //this script is so important 
                   //don't tuched 
@@ -213,6 +263,21 @@
                     
                   },false)
                 </script>
+        </form>
+            <!-- <button class="btn btn-primary" 
+                type="button" data-bs-toggle="modal"
+                data-bs-target="#uploadModal">Upload</button>
+                 -->
+                  <!-- <p class="text-sm mb-0">
+                مشاهده <a href="https://github.com/bootstrap-wysiwyg/bootstrap3-wysiwyg">مستندات و توضیحات این ویرایشگر</a>
+              </p> -->
+            </div>
+        </div>
+      </div>
+        <!-- /.col-->
+      </div>
+      <!-- ./row -->
+    </section>
 
                   
 

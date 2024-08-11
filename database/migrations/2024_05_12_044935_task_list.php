@@ -17,9 +17,9 @@ return new class extends Migration
             $table->longText("descryption");
             $table->string("file")->default("not_set");
             $table->integer("personel_id");//task for who
-            $table->enum("is_it_done",["done","in_process"]);
+            $table->enum("is_it_done",["done","in_process"])->default("in_process");
             $table->foreign("personel_id")->references("id")->on("personel");//who must receve the message can me of admins            
-
+            $table->timestamps();
         });
     }
 
